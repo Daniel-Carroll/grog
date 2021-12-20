@@ -1,17 +1,25 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import type { AppProps } from 'next/app'
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import Layout from '../components/layout'
 import './styles.css';
+
+const colors = {
+  brand: {
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
+  },
+}
+
+const theme = extendTheme({ colors })
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to ui!</title>
-      </Head>
-      <main className="app">
+    <ChakraProvider theme={theme}>
+      <Layout>
         <Component {...pageProps} />
-      </main>
-    </>
+      </Layout>
+    </ChakraProvider>
   );
 }
 
