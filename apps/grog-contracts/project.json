@@ -1,0 +1,47 @@
+{
+    "root": "apps/grog-contracts",
+    "sourceRoot": "apps/grog-contracts",
+    "projectType": "application",
+    "targets": {
+      "build": {
+        "executor": "@nrwl/next:build",
+        "outputs": ["{options.outputPath}"],
+        "defaultConfiguration": "production",
+        "options": {
+          "root": "apps/grog-contracts",
+          "outputPath": "dist/apps/grog-contracts"
+        },
+        "configurations": {
+          "production": {}
+        }
+      },
+      "serve": {
+        "executor": "@nrwl/next:server",
+        "options": {
+          "buildTarget": "grog-contracts:build",
+          "dev": true
+        },
+        "configurations": {
+          "production": {
+            "buildTarget": "grog-contracts:build:production",
+            "dev": false
+          }
+        }
+      },
+      "export": {
+        "executor": "@nrwl/next:export",
+        "options": {
+          "buildTarget": "grog-contracts:build:production"
+        }
+      },
+      "lint": {
+        "executor": "@nrwl/linter:eslint",
+        "outputs": ["{options.outputFile}"],
+        "options": {
+          "lintFilePatterns": ["apps/grog-contracts/**/*.{ts,tsx,js,jsx}"]
+        }
+      }
+    },
+    "tags": []
+  }
+  

@@ -9,7 +9,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Powered by Degeneracy
+                Powered by beer
             </a>
         </footer>
     )
