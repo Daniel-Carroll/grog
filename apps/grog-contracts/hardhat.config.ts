@@ -20,12 +20,20 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+task("network-details", "Prints details of network", async (taskArgs, hre) => {
+  console.log(hre.config.networks);
+}) 
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
+  defaultNetwork: 'hardhat',
   networks: {
+    localhost: {
+      chainId: 31337,
+    },
     rinkeby: {
       url: process.env.RINKEBY_URL || "",
       accounts:

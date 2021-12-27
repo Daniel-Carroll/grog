@@ -1,13 +1,14 @@
 import React from "react"
-import { Box, Button, Flex, Heading, IconButton, LinkOverlay, Spacer, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, IconButton, Spacer, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { FaMoon, FaSun } from "react-icons/fa"
 import NextLink from "next/link"
+import ConnectButton from "./connect"
 
 function Header() {
     const { toggleColorMode: toggleMode } = useColorMode()
     const text = useColorModeValue("dark", "light")
     const SwitchIcon = useColorModeValue(FaMoon, FaSun)
-
+ 
     return (
         <Flex p="4">
             <Box p="2">
@@ -43,7 +44,7 @@ function Header() {
                     onClick={toggleMode}
                     icon={<SwitchIcon />}
                 />
-                <Button colorScheme="teal">Connect Wallet</Button>
+            <ConnectButton></ConnectButton>
             </Box>
         </Flex>
     )

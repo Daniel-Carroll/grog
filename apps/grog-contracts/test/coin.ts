@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { ethernal, ethers } from "hardhat";
+import { ethers, network } from "hardhat";
 
 describe("GrogToken", function () {
   it("Should set total supply to 1000", async function () {
@@ -7,11 +7,7 @@ describe("GrogToken", function () {
     const token = await GrogToken.deploy(1000);
     await token.deployed();
 
-    await ethernal.push({ 
-      name: "GrogToken",
-      address: token.address
-    })
-
+    console.log(network.config.chainId);
     expect(
       await token.totalSupply()
     ).to.equal(1000);
