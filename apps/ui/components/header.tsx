@@ -2,7 +2,8 @@ import React from "react"
 import { Box, Button, Flex, Heading, IconButton, Spacer, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { FaMoon, FaSun } from "react-icons/fa"
 import NextLink from "next/link"
-import ConnectButton from "./connect"
+import ConnectButton from "./web3/connect"
+import Balance from "./web3/balance"
 
 function Header() {
     const { toggleColorMode: toggleMode } = useColorMode()

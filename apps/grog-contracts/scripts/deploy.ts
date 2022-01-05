@@ -3,7 +3,7 @@
 //
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
-import {ethers,ethernal, network} from "hardhat";
+import {ethernal, ethers} from "hardhat";
 
 
 async function main() {
@@ -16,7 +16,7 @@ async function main() {
 
   // We get the contract to deploy
   const GrogToken = await ethers.getContractFactory("GrogToken");
-  const token = await GrogToken.deploy(1000);
+  const token = await GrogToken.deploy(1000); 
   await token.deployed();
 
 

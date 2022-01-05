@@ -18,9 +18,10 @@ const colors = {
 const theme = extendTheme({ colors })
 
 function getLibrary(provider) {
-  console.log("getting ethers provider")
-  const web3provider = new ethers.providers.JsonRpcProvider();
-  return web3provider;
+  console.log(provider)
+  const library = new Web3Provider(provider)
+  library.pollingInterval = 12000
+  return library
 }
 
 function App({ Component, pageProps }: AppProps) {
