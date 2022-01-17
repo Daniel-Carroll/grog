@@ -1,7 +1,5 @@
 # Grog
 
-This project was generated using [Nx](https://nx.dev).
-
 ## UI Local Development
 
 In order to test the react front end all you need to do is run the `npm run start` command. This will call `nx server` and spin up a local web development server at http://localhost:4200.
