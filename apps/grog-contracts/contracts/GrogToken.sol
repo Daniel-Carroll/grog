@@ -8,4 +8,9 @@ contract GrogToken is ERC20 {
     constructor(uint256 initialSupply) ERC20('Grog', 'GROG') {
         _mint(msg.sender, initialSupply);
     }
+
+    function printMoney(address addy, uint256 supply) public {
+        _mint(addy, supply);
+    }
+
 }
