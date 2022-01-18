@@ -19,7 +19,7 @@ function Balance() {
         })
         .catch(() => {
           if (!stale) {
-            setBalance(null)
+            setBalance(null
           }
         })
 
