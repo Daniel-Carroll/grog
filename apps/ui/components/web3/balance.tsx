@@ -25,7 +25,7 @@ function Balance() {
 
       return () => {
         stale = true
-        setBalance(undefined)
+        setBalance(undefined
       }
     }
   }, [account, library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
